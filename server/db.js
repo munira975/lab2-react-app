@@ -1,11 +1,7 @@
 import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-
-dotenv.config({ path: './.env' });
-
-const CONNECTION_URL = process.env.CONNECTION_URL;
 
 const dbConnect = async () => {
+    const CONNECTION_URL = process.env.CONNECTION_URL;
     try {
         await mongoose.connect(CONNECTION_URL);
         console.log('Connected to MongoDB Atlas...');
